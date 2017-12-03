@@ -12,7 +12,12 @@ dataset$Salary = ifelse(is.na(dataset$Salary),
                      dataset$Salary)
 
 # Encoding categorical data
-
+dataset$Country = factor(dataset$Country,
+                         levels = c('France', 'Germany', 'Spain'),
+                         labels = c(1, 2, 3))
+dataset$Purchased = factor(dataset$Purchased,
+                           levels = c('Yes', 'No'),
+                           labels = c(1, 0))
 
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
