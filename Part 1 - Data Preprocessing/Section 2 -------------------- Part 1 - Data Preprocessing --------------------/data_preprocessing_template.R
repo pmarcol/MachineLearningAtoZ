@@ -11,6 +11,9 @@ dataset$Salary = ifelse(is.na(dataset$Salary),
                      ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
                      dataset$Salary)
 
+# Encoding categorical data
+
+
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
 library(caTools)
