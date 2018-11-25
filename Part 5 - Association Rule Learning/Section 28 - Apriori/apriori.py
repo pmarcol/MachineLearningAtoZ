@@ -17,3 +17,14 @@ rules = apriori(transactions, min_support = 0.003, min_confidence = 0.2, min_lif
 
 # Visualising the results
 results = list(rules)
+results2 = []
+for i in range(len(results)):
+    row = {
+            'items': list(results[i].items),
+            'base': list(results[i].ordered_statistics[0].items_base),
+            'add': list(results[i].ordered_statistics[0].items_add),
+            'support': results[i].support,
+            'confidence': results[i].ordered_statistics[0].confidence,
+            'lift': results[i].ordered_statistics[0].lift
+            }
+    results2.append(row)
